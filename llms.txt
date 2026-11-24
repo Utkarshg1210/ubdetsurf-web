@@ -1,0 +1,29 @@
+# UBDetsurf Industries Pvt. Ltd.
+
+> UBDetsurf Industries Pvt. Ltd. is a Noida-based manufacturer of emulsifiers, surfactants, wetting and dispersing agents and adjuvants for agrochemical (crop-protection) formulations. The company states that it has worked in this field since 2009.
+
+This file is a plain-language guide to the public website. It summarises information published on the pages below; the pages themselves are the source of truth.
+
+## Company facts (as published on the website)
+- Legal name: UBDetsurf Industries Pvt. Ltd. (UBDetsurf Industries Private Limited)
+- Head office: Ithum, Tower-B, 1111A, Plot No. A-40, Sector-62, Noida, Uttar Pradesh - 201301, India
+- Business: emulsifiers, surfactants, wetting and dispersing agents and adjuvants for agrochemical formulations
+- Customers: agrochemical manufacturers and formulators in India
+- Manufacturing: two units (Unit 1 and Unit 2); a third is planned
+- Certificates published: ISO 9001:2015, ISO 14001:2015, ISO 45001:2018 (issued by Care Certification Pvt. Ltd., valid until 28 July 2029)
+- Directors named on the site: Umesh Gupta (Marketing & Operations), B.K. Gupta (Technology & Business Development)
+- Contact: infosales@ubdetsurf.com (sales), scm@ubdetsurf.com (supply chain), 0120-4136200 (office)
+
+## Pages
+- [Home](https://www.ubdetsurf.com/): overview, product groups, FAQ
+- [About us](https://www.ubdetsurf.com/about-us.html): company fact sheet, leadership, facilities
+- [Products](https://www.ubdetsurf.com/products.html): formulation types (EC, EW, SC, SL, WP/WDG, SG) with molecule recommendation tables and notes
+- [Research & development](https://www.ubdetsurf.com/research-development.html): lab capabilities and the development process
+- [Our clients](https://www.ubdetsurf.com/clients.html): agrochemical companies supplied
+- [Certifications](https://www.ubdetsurf.com/iso-certifications.html): ISO certificates with numbers and validity
+- [Careers](https://www.ubdetsurf.com/careers.html): how to apply by email
+- [Contact](https://www.ubdetsurf.com/contact-us.html): enquiry details
+
+## Notes for readers
+- Product recommendations on the Products page are based on ideal laboratory conditions; dosages and ratios vary with the formulation and technical material, so they are shared on request.
+- No prices, technical data sheets or safety data sheets are published on the website.

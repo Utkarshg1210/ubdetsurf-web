@@ -1,0 +1,108 @@
+/* ==========================================================================
+   Responsive refinements (mobile-first: base styles are in global.css and
+   components.css; everything here enhances larger screens).
+   Breakpoints: 640 (large phone), 900 (tablet / nav switch), 1100 (desktop).
+   ========================================================================== */
+
+@media (min-width: 640px) {
+  .logo__mark { width: 56px; height: 56px; }
+  .logo__name { font-size: 1.15rem; }
+  .logo__tag { font-size: 0.9rem; }
+
+  .metrics { grid-template-columns: repeat(3, 1fr); }
+  .metric { border-bottom: 0; border-right: 1px solid rgba(255, 255, 255, 0.1); }
+  .metric:last-child { border-right: 0; }
+
+  .tile-grid { grid-template-columns: repeat(2, 1fr); }
+  .card-grid--3, .card-grid--2 { grid-template-columns: repeat(2, 1fr); }
+  .gallery { grid-template-columns: repeat(2, 1fr); }
+  .facilities { grid-template-columns: repeat(2, 1fr); }
+  .certs { grid-template-columns: repeat(2, 1fr); }
+  .logo-grid { grid-template-columns: repeat(3, 1fr); }
+  .reach { grid-template-columns: repeat(2, 1fr); }
+  .form-grid--2 { grid-template-columns: repeat(2, 1fr); }
+  .form-grid .field--full { grid-column: 1 / -1; }
+  .enquiry-types { grid-template-columns: repeat(2, 1fr); }
+  .related { grid-template-columns: repeat(2, 1fr); }
+  .fact-sheet__row { grid-template-columns: 14rem 1fr; gap: var(--space-5); align-items: baseline; }
+  .form-actions { grid-template-columns: auto auto; justify-content: start; }
+  .strip__inner { flex-direction: row; align-items: center; justify-content: space-between; }
+  .site-footer__bottom { flex-direction: row; justify-content: space-between; align-items: center; }
+}
+
+@media (min-width: 900px) {
+  /* ---- Header switches to two rows ---- */
+  :root { --brand-row-h: 88px; }
+  .site-header {
+    /* Slide the brand row out of view; keep only the nav row pinned. */
+    top: calc(var(--brand-row-h) * -1);
+  }
+  .site-header__brand { min-height: var(--brand-row-h); }
+  .logo__mark { width: 68px; height: 68px; }
+  .logo__name { font-size: clamp(1.3rem, 1.9vw, 1.7rem); }
+  .logo__tag { font-size: 1rem; }
+  .header-cta { display: inline-flex; }
+  .nav-toggle { display: none; }
+  .site-nav { display: block; }
+  .site-nav__list {
+    flex-direction: row;
+    justify-content: center;
+    gap: 0.1rem;
+    padding-block: 0;
+  }
+  .site-nav a {
+    justify-content: center;
+    min-height: var(--nav-row-h);
+    padding: 0 0.9rem;
+    border-left: 0;
+    border-bottom: 3px solid transparent;
+    font-size: 0.78rem;
+  }
+  .site-nav a:hover,
+  .site-nav a[aria-current="page"] { border-bottom-color: var(--gold-500); }
+
+  .hero { min-height: 580px; }
+  .tile-grid--4 { grid-template-columns: repeat(4, 1fr); }
+  .card-grid--3 { grid-template-columns: repeat(3, 1fr); }
+  .split { grid-template-columns: 1fr 1fr; gap: var(--space-8); }
+  .split--wide-copy { grid-template-columns: 1.15fr 0.85fr; }
+  .leader { grid-template-columns: 280px 1fr; }
+  .gallery { grid-template-columns: repeat(4, 1fr); }
+  .facilities { grid-template-columns: repeat(4, 1fr); }
+  .certs { grid-template-columns: repeat(3, 1fr); }
+  .logo-grid { grid-template-columns: repeat(4, 1fr); }
+  .reach { grid-template-columns: repeat(3, 1fr); }
+  .contact-layout { grid-template-columns: 0.8fr 1.2fr; align-items: start; gap: var(--space-8); }
+  .enquiry-types { grid-template-columns: repeat(4, 1fr); }
+  .timeline { grid-template-columns: repeat(5, 1fr); gap: var(--space-3); }
+  .timeline__item { border-left: 1px solid var(--line); border-top: 4px solid var(--gold-500); padding: var(--space-5) var(--space-4); }
+  .values { grid-template-columns: repeat(4, 1fr); }
+  .site-footer__grid { grid-template-columns: 1.4fr 1fr 1.2fr; gap: var(--space-8); }
+  .related { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (min-width: 1100px) {
+  .logo-grid { grid-template-columns: repeat(6, 1fr); }
+  .site-nav a { padding: 0 1.05rem; font-size: 0.8rem; }
+}
+
+/* ---- Small screens: stack the recommendation tables ---- */
+@media (max-width: 719px) {
+  .data-table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  .data-table, .data-table tbody, .data-table tr, .data-table td { display: block; width: 100%; }
+  .data-table tr { padding: var(--space-4); border-bottom: 1px solid var(--line); }
+  .data-table tbody tr:last-child { border-bottom: 0; }
+  .data-table td { padding: 0; border: 0; }
+  .data-table .col-no { display: none; }
+  .data-table .col-product { width: 100%; margin-bottom: var(--space-2); }
+  .data-table .subhead { padding: var(--space-3) var(--space-4); }
+  .data-table .subhead th, .data-table .subhead td { display: block; width: 100%; padding: 0; }
+}
+
+/* ---- Print: keep the content, drop chrome ---- */
+@media print {
+  .site-header, .skip-link, .cta-band, .chip-nav, .nav-toggle { display: none !important; }
+  body { background: #fff; }
+  .hero, .page-hero, .section--dark, .site-footer { background: #fff !important; color: #000 !important; }
+  .page-hero h1, .hero h1, .section--dark h2 { color: #000 !important; }
+}

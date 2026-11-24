@@ -1,0 +1,5 @@
+# robots.txt for https://www.ubdetsurf.com
+User-agent: *
+Allow: /
+
+Sitemap: https://www.ubdetsurf.com/sitemap.xml
