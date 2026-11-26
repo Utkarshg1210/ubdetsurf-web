@@ -9,7 +9,9 @@ This file is a plain-language guide to the public website. It summarises informa
 - Head office: Ithum, Tower-B, 1111A, Plot No. A-40, Sector-62, Noida, Uttar Pradesh - 201301, India
 - Business: emulsifiers, surfactants, wetting and dispersing agents and adjuvants for agrochemical formulations
 - Customers: agrochemical manufacturers and formulators in India
-- Manufacturing: two units (Unit 1 and Unit 2); a third is planned
+- Manufacturing: two units; a third is planned
+  - Unit 1: G-517, UPSIDC Industrial Area, MG Road, Ghaziabad, Uttar Pradesh 201015
+  - Unit 2: G-26, Hapur Road, UPSIDC Industrial Area, Udyog Kunj, Ghaziabad, Uttar Pradesh 201001
 - Certificates published: ISO 9001:2015, ISO 14001:2015, ISO 45001:2018 (issued by Care Certification Pvt. Ltd., valid until 28 July 2029)
 - Directors named on the site: Umesh Gupta (Marketing & Operations), B.K. Gupta (Technology & Business Development)
 - Contact: infosales@ubdetsurf.com (domestic market), exim@ubdetsurf.com (international market), hrrrgroup3@gmail.com (job applications), 0120-4136200 (office)

@@ -16,13 +16,13 @@ Everything on the rebuilt site comes from the original Wix pages, the Velo files
 | 8 | **Response-time promises** | The original forms promised replies "within one business day" and HR replies "within 7–10 working days". **Removed**: they are commitments, and the forms no longer send anything themselves. | Re-add only if you will keep them. |
 | 9 | **Unit 1 location vs certificate site** | All three ISO certificates name the manufacturing site as G-26, Hapur Road, Udyog Kunj, Ghaziabad. The site's address is Noida. | Confirm that Unit 1 is the Ghaziabad site and, if so, say so on the About page. |
 | 10 | **Photo authenticity** | Some supplied photos (for example the drums in finished-goods storage and the production-floor vessels) have a very smooth, stylised look. They are used as real photographs of the company. | Confirm they are real photographs of your premises. Replace any that are not. |
-| 11 | **Facilities without photos** | Manufacturing Unit 2 and the Noida office have no photograph; the original used stock images. | Supply real photos. |
+| 11 | **Facilities without photos** | Manufacturing Unit 2 and the Noida office have no photograph; the original used stock images. | Supply real photos. | Photos for Unit 1 and the Noida office, and both unit addresses, were supplied by the owner (26 November 2026). |
 
 ## B. Content that was removed or replaced
 
 - **All Unsplash stock photos** (leaf droplets, lab bench, team, field, crop). They are not UBDetsurf's own and implied facilities and people that may not be yours. Pages use real photos, a CSS pattern or no image. **Exception:** the field-spraying photo was restored beside "Our story" on the About page to match the Wix design. The home page slideshow, "Global markets" and closing-banner stock photos were restored for the same reason; replace them with real company photos when available. The same applies to the Products page card and banner photos, and to the R&D, Clients, Careers and Contact banners. Since November 2026 job applications go to hrrrgroup3@gmail.com (owner's instruction).
 - **Five hotlinked client logos** (Advance Agrolife, Agrow Allied Ventures, Acufine Lifesciences, Yogi Crop Sciences, Nathsagar Bio Genetics) were loaded from those companies' own websites, which is fragile and may not be permitted. They now appear as **text names**. **Action:** obtain the logos and permission to show them, or keep text.
-- **Client logos in general:** the 22 logos are shown to identify existing customers. Confirm you have permission from each company. *Owner confirmed permission (November 2026).*
+- **Client logos in general:** the 21 logos are shown to identify existing customers. Confirm you have permission from each company. *Owner confirmed permission (November 2026).*
 - **"Request received / sent" messages** from the Wix forms (they claimed an enquiry or application was sent). The new forms only open the visitor's email app and say so.
 - **File upload field** on Careers (a static page cannot receive files). The page tells applicants to attach their CV to the email.
 - **Counters animating from 0** (they showed "0+" without JavaScript).
