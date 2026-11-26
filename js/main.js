@@ -8,7 +8,7 @@
 
   /* Company e-mail addresses (verified on the original website). */
   var SALES_EMAIL = "infosales@ubdetsurf.com";
-  var CAREERS_EMAIL = "infosales@ubdetsurf.com"; // TODO: confirm a dedicated HR address (see CONTENT_AUDIT.md)
+  var CAREERS_EMAIL = "hrrrgroup3@gmail.com"; // careers applications
 
   /* ---------- Mobile navigation ---------- */
   var toggle = document.querySelector(".nav-toggle");
