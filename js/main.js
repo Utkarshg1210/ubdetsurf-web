@@ -175,6 +175,41 @@
     });
   }
 
+  /* ---------- Products page: click-to-open sheets and molecule search ----------
+     Runs before the reveal code. Without JavaScript every sheet stays visible. */
+  (function(){
+var reco=document.getElementById('recommendations');if(!reco||!document.getElementById('mol-q'))return;
+var sheets=[].slice.call(reco.querySelectorAll('.sheet')),cards=[].slice.call(document.querySelectorAll('.pcard[data-sheet]')),tabs=[].slice.call(reco.querySelectorAll('.chip-nav a'));
+if(!sheets.length)return;reco.querySelector('.sheet-close').hidden=false;document.documentElement.classList.add('js-sheets');
+sheets.forEach(function(x){x.removeAttribute('data-reveal');x.classList.remove('reveal-ready')});
+function clearMarks(){reco.querySelectorAll('mark.found').forEach(function(m){m.replaceWith(m.textContent)})}
+function open(id,target){clearMarks();reco.classList.add('is-open');
+ sheets.forEach(function(x){x.classList.toggle('is-shown',x.id===id)});
+ tabs.forEach(function(a){a.setAttribute('aria-current',String(a.hash==='#'+id))});
+ cards.forEach(function(c){c.classList.toggle('is-active',c.dataset.sheet===id)});
+ reco.querySelectorAll('[data-reveal]').forEach(function(e){e.classList.remove('reveal-ready')});
+ if(target){var m=document.createElement('mark');m.className='found';while(target.firstChild)m.appendChild(target.firstChild);target.appendChild(m)}
+ (target||reco).scrollIntoView({block:target?'center':'start'})}
+document.addEventListener('click',function(e){var a=e.target.closest('a');if(!a||!a.hash)return;var id=a.hash.slice(1);
+ if(sheets.some(function(x){return x.id===id})&&(a.matches('.pcard')||a.closest('.chip-nav'))){e.preventDefault();history.replaceState(null,'','#'+id);open(id)}});
+reco.querySelector('.sheet-close').onclick=function(){reco.classList.remove('is-open');cards.forEach(function(c){c.classList.remove('is-active')});history.replaceState(null,'',location.pathname);document.querySelector('.pgrid').scrollIntoView()};
+function fromHash(){var id=location.hash.slice(1);if(sheets.some(function(x){return x.id===id}))open(id)}
+addEventListener('hashchange',fromHash);addEventListener('load',fromHash);
+function norm(t){return t.toLowerCase().replace(/[^a-z0-9]/g,'')}
+var index=[];sheets.forEach(function(sh){var group='';sh.querySelectorAll('tbody tr').forEach(function(tr){if(tr.classList.contains('subhead')){group=tr.textContent.trim();return}
+ var product=tr.querySelector('.col-product').textContent.trim();
+ tr.querySelectorAll('.molecules li').forEach(function(li){index.push({sheet:sh.id,type:sh.querySelector('h3').textContent.trim(),group:group,product:product,name:li.textContent.trim(),key:norm(li.textContent),li:li})})})});
+var q=document.getElementById('mol-q'),out=document.querySelector('.finder__results'),status=document.querySelector('.finder__status');
+function el(tag,text,cls){var e=document.createElement(tag);e.textContent=text;if(cls)e.className=cls;return e}
+q.addEventListener('input',function(){out.textContent='';var words=q.value.trim().split(/\s+/).map(norm).filter(Boolean),all=norm(q.value);
+ if(all.length<3){status.textContent=all.length?'Type at least 3 characters.':'';return}
+ var hits=index.filter(function(r){return r.key.indexOf(all)>-1||words.every(function(w){return r.key.indexOf(w)>-1})});
+ if(!hits.length){status.textContent='No match in our lists. ';var a=el('a','Ask our team');a.href='contact-us.html#enquiry';status.appendChild(a);return}
+ status.textContent=hits.length+(hits.length===1?' match':' matches');var last='';
+ hits.forEach(function(r){if(r.type!==last){out.appendChild(el('h4',r.type));last=r.type}
+  var b=el('button','','hit');b.type='button';b.appendChild(el('b','Product: '+r.product));b.appendChild(el('span',r.name+(r.group?' ('+r.group+')':'')));b.onclick=function(){open(r.sheet,r.li)};out.appendChild(b)})});
+})();
+
   /* ---------- Gentle reveal for below-the-fold blocks ----------
      Only elements that start off-screen are hidden, so nothing flashes and
      the LCP element is never touched. Skipped for reduced-motion users. */
