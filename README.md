@@ -35,7 +35,7 @@ Opening the files by double-clicking mostly works, but use a server to test exac
 
 ## Deploy
 
-1. **Choose a static host** (Netlify, Cloudflare Pages, GitHub Pages, Vercel, or any web hosting/cPanel). Upload everything except the `.md` files (they are harmless if uploaded, but not needed).
+1. **Choose a static host.** For Netlify, `netlify.toml` publishes only the website files and `_redirects` holds the old-address redirects. On any other host, upload everything except the `.md` files: they are internal notes and should not be public.
 2. **Point the domain** `www.ubdetsurf.com` at the host and enable HTTPS. Redirect `ubdetsurf.com` and `http://` to `https://www.ubdetsurf.com/`.
 3. **Set up the 301 redirects** in `URL_REDIRECTS.md` *before* switching the domain away from Wix.
 4. In Google Search Console and Bing Webmaster Tools, verify the domain and submit `https://www.ubdetsurf.com/sitemap.xml`.
@@ -52,7 +52,7 @@ Strict-Transport-Security: max-age=31536000; includeSubDomains
 X-Content-Type-Options: nosniff
 Referrer-Policy: strict-origin-when-cross-origin
 Permissions-Policy: camera=(), microphone=(), geolocation=()
-Content-Security-Policy: default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'
+Content-Security-Policy: default-src 'self'; img-src 'self' data:; style-src 'self'; style-src-attr 'unsafe-inline'; script-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'
 
 # Caching
 /assets/*   Cache-Control: public, max-age=31536000, immutable
@@ -62,7 +62,7 @@ Content-Security-Policy: default-src 'self'; img-src 'self' data:; style-src 'se
 /           Cache-Control: no-cache
 ```
 
-- The CSP works because the site has **no inline scripts or styles** (the JSON-LD blocks are data, not executable script). Test it on the live site; if you add analytics or embeds, add their domains.
+- The CSP expects **no inline scripts** (the JSON-LD blocks are data, not executable script). Some cards use inline `style` attributes to time their animation, which `style-src-attr 'unsafe-inline'` allows. Test it on the live site; if you add analytics or embeds, add their domains.
 - Because `/css/` and `/js/` are cached for a week and have no version in the file name, either add `?v=2` to the `<link>`/`<script>` URLs when you change them or lower their `max-age`.
 - Turn on **Brotli or gzip** compression for HTML, CSS, JS, SVG and XML.
 - Serve `.woff2` with `Content-Type: font/woff2` and `.avif`/`.webp` with the right image types (most hosts do this already).

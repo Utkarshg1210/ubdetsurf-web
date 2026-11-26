@@ -20,6 +20,8 @@ Old exported file names (only matter if the files were ever published): `home.ht
 
 There is **no "Why UBDetsurf" page**: the original site did not have one, and its content would have had to be invented. The `/why-ubdetsurf.html` file suggested in the brief was therefore not created. If you want it, supply the real content and add it as a page.
 
+For Netlify these are already in the `_redirects` file (the `/index.html` rule is left out: the home page's canonical address covers it). Test every old address on the temporary Netlify address before switching the domain.
+
 ## Apache (`.htaccess`)
 
 ```apache

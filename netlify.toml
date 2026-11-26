@@ -1,0 +1,4 @@
+# Publish only the website files. The internal .md notes stay out of the public site.
+[build]
+  command = "rm -rf dist && mkdir dist && cp -R *.html favicon.ico robots.txt sitemap.xml llms.txt _redirects css js assets dist/"
+  publish = "dist"

@@ -1,0 +1,8 @@
+# Old Wix addresses -> new pages (permanent). See URL_REDIRECTS.md.
+/about-3             /about-us.html             301
+/products            /products.html             301
+/general-1           /research-development.html 301
+/clients             /clients.html              301
+/iso-certifications  /iso-certifications.html   301
+/contact-8           /careers.html              301
+/contact-1           /contact-us.html           301
