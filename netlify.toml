@@ -2,3 +2,9 @@
 [build]
   command = "rm -rf dist && mkdir dist && cp -R *.html favicon.ico robots.txt sitemap.xml llms.txt _redirects css js assets dist/"
   publish = "dist"
+
+# Keep links as written (about-us.html), matching the canonical addresses and sitemap.
+[build.processing]
+  skip_processing = false
+[build.processing.html]
+  pretty_urls = false
