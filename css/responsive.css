@@ -24,7 +24,6 @@
   .form-grid .field--full { grid-column: 1 / -1; }
   .enquiry-types { grid-template-columns: repeat(2, 1fr); }
   .related { grid-template-columns: repeat(2, 1fr); }
-  .fact-sheet__row { grid-template-columns: 14rem 1fr; gap: var(--space-5); align-items: baseline; }
   .form-actions { grid-template-columns: auto auto; justify-content: start; }
   .strip__inner { flex-direction: row; align-items: center; justify-content: space-between; }
   .site-footer__bottom { flex-direction: row; justify-content: space-between; align-items: center; }
@@ -66,7 +65,20 @@
   .card-grid--3 { grid-template-columns: repeat(3, 1fr); }
   .split { grid-template-columns: 1fr 1fr; gap: var(--space-8); }
   .split--wide-copy { grid-template-columns: 1.15fr 0.85fr; }
-  .leader { grid-template-columns: 280px 1fr; }
+  .director { grid-template-columns: 320px 1fr; gap: var(--space-8); }
+  .director--flip { grid-template-columns: 1fr 320px; }
+  .director--flip .director__photo { order: 2; }
+  .journey { padding-left: 0; }
+  .journey::before, .journey::after { left: calc(50% - 1.5px); }
+  .journey__item { width: calc(50% - 3rem); }
+  .journey__item:nth-child(even) { margin-left: auto; }
+  .journey__item::after { left: auto; right: calc(-3rem - 9px); }
+  .journey__item:nth-child(even)::after { right: auto; left: calc(-3rem - 9px); }
+  .mission-cards { grid-template-columns: repeat(4, 1fr); }
+  /* Stagger only while the cards sit side by side. */
+  .mission-cards li:nth-child(2) { --reveal-delay: 0.15s; }
+  .mission-cards li:nth-child(3) { --reveal-delay: 0.3s; }
+  .mission-cards li:nth-child(4) { --reveal-delay: 0.45s; }
   .gallery { grid-template-columns: repeat(4, 1fr); }
   .facilities { grid-template-columns: repeat(4, 1fr); }
   .certs { grid-template-columns: repeat(3, 1fr); }
@@ -100,9 +112,23 @@
 }
 
 /* ---- Print: keep the content, drop chrome ---- */
+/* ---- Home client cards: three across, appearing in turn ---- */
+@media (min-width: 720px) {
+  .client-cards { grid-template-columns: repeat(3, 1fr); gap: 1.75rem; }
+  .client-card { height: 160px; padding: 1.75rem 2rem; }
+  .client-card img { height: 96px; }
+  .client-cards li:nth-child(3n+2) { --reveal-delay: 0.15s; }
+  .client-cards li:nth-child(3n) { --reveal-delay: 0.3s; }
+}
+
 @media print {
   .site-header, .skip-link, .cta-band, .chip-nav, .nav-toggle { display: none !important; }
   body { background: #fff; }
   .hero, .page-hero, .section--dark, .site-footer { background: #fff !important; color: #000 !important; }
   .page-hero h1, .hero h1, .section--dark h2 { color: #000 !important; }
+  .reveal-ready { opacity: 1 !important; transform: none !important; }
+  .journey::after { transform: none; }
+  .hero-dots { display: none; }
+  .globe figcaption { color: #000; }
+  #vision-mission :is(h2, h2 em, h3, h4, p, span) { color: #000 !important; }
 }

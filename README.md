@@ -8,7 +8,7 @@ A plain **HTML5 + CSS3 + vanilla JavaScript** static site. No framework, no buil
 
 ```
 index.html                  Home
-about-us.html               About us (fact sheet, leadership, facilities)
+about-us.html               About us (leadership, journey, vision & mission, facilities)
 products.html               Formulation types + molecule recommendation tables + FAQ
 research-development.html   R&D
 clients.html                Clients
@@ -103,7 +103,7 @@ Semantic landmarks, skip link, visible focus rings, accessible mobile menu (`ari
 ## Licences
 
 - **Fonts:** Merriweather, Open Sans, DM Mono: SIL Open Font License 1.1, self-hosted from the fontsource packages. Keep the licence if you redistribute the font files. Lucida Handwriting (logo tagline) is *not* bundled; visitors who lack it see a serif fallback.
-- **Images:** photographs, certificates and logos supplied by UBDetsurf. Client logos belong to those companies.
+- **Images:** photographs, certificates and logos supplied by UBDetsurf, except `crop-spraying-field-*` (About page), an Unsplash stock photo (`photo-1719559521262-773f39dbee87`, Unsplash License). The home page `hero-slide-*` (also behind its closing banner) and `crop-rows-aerial-*` images are Unsplash stock photos too (`photo-1783454975251-8baeadeb91f7`, `photo-1742161261695-922c22274e5b`, `photo-1625246333195-78d9c38ad449`, `photo-1416879595882-3373a0480b5b`, `photo-1724531281596-cfae90d5a082`). Client logos belong to those companies.
 - **Code:** written for UBDetsurf Industries Pvt. Ltd.
 
 ## Original files

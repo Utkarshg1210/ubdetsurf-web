@@ -196,4 +196,45 @@
       }
     });
   }
+
+  /* ---------- Journey line fills as the page scrolls (About page) ---------- */
+  var journey = document.querySelector(".journey");
+  if (journey && !reduce) {
+    var fillJourney = function () {
+      var box = journey.getBoundingClientRect();
+      var done = (window.innerHeight * 0.7 - box.top) / box.height;
+      journey.style.setProperty("--journey-fill", Math.max(0, Math.min(1, done)).toFixed(3));
+    };
+    window.addEventListener("scroll", fillJourney, { passive: true });
+    window.addEventListener("resize", fillJourney);
+    fillJourney();
+  }
+
+  /* ---------- Home slideshow ----------
+     Changes every 5s; waits while the pointer is over the header; stops once a
+     visitor picks a photo; never auto-plays with reduced motion. */
+  var slides = document.querySelectorAll(".hero-slide");
+  if (slides.length > 1) {
+    var hero = document.querySelector(".hero--slides");
+    var dotBar = hero.querySelector(".hero-dots");
+    var dots = dotBar.querySelectorAll(".hero-dot");
+    var current = 0, timer = null, autoPlay = !reduce;
+    var showSlide = function (n) {
+      current = n;
+      slides.forEach(function (el, i) { el.classList.toggle("is-active", i === n); });
+      dots.forEach(function (el, i) { el.setAttribute("aria-current", String(i === n)); });
+    };
+    var run = function (on) {
+      clearInterval(timer);
+      if (on && autoPlay) timer = setInterval(function () { showSlide((current + 1) % slides.length); }, 5000);
+    };
+    dots.forEach(function (el, i) {
+      el.addEventListener("click", function () { autoPlay = false; run(false); showSlide(i); });
+    });
+    hero.addEventListener("mouseenter", function () { run(false); });
+    hero.addEventListener("mouseleave", function () { run(true); });
+    dotBar.hidden = false;
+    showSlide(0);
+    run(true);
+  }
 })();

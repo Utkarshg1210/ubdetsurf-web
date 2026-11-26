@@ -34,7 +34,7 @@
 <link rel="preload" href="assets/fonts/open-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/merriweather-latin-300-italic.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/dm-mono-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" as="image" type="image/avif" fetchpriority="high" imagesrcset="assets/images/finished-goods-storage-drums-640.avif 640w, assets/images/finished-goods-storage-drums-960.avif 960w, assets/images/finished-goods-storage-drums-1200.avif 1200w" imagesizes="100vw">
+<link rel="preload" as="image" type="image/avif" fetchpriority="high" imagesrcset="assets/images/hero-slide-1-800.avif 800w, assets/images/hero-slide-1-1600.avif 1600w" imagesizes="100vw">
 <link rel="stylesheet" href="css/variables.css">
 <link rel="stylesheet" href="css/global.css">
 <link rel="stylesheet" href="css/components.css">
@@ -243,8 +243,13 @@
 <div class="brand-message"><span><strong>UBDetsurf &mdash; </strong><em>Advanced Chemistry for Better Crop Protection.</em></span></div>
 <main id="main">
 
-<section class="hero" aria-labelledby="hero-title">
-  <div class="hero__media"><picture><source type="image/avif" srcset="assets/images/finished-goods-storage-drums-640.avif 640w, assets/images/finished-goods-storage-drums-960.avif 960w, assets/images/finished-goods-storage-drums-1200.avif 1200w" sizes="100vw"><source type="image/webp" srcset="assets/images/finished-goods-storage-drums-640.webp 640w, assets/images/finished-goods-storage-drums-960.webp 960w, assets/images/finished-goods-storage-drums-1200.webp 1200w" sizes="100vw"><img src="assets/images/finished-goods-storage-drums-960.webp" width="1200" height="675" alt="Blue UBDetsurf Industries drums stacked in the finished goods store" fetchpriority="high" decoding="async"></picture></div>
+<section class="hero hero--slides" aria-labelledby="hero-title">
+  <div class="hero__media" aria-hidden="true">
+    <div class="hero-slide is-active"><picture><source type="image/avif" srcset="assets/images/hero-slide-1-800.avif 800w, assets/images/hero-slide-1-1600.avif 1600w" sizes="100vw"><source type="image/webp" srcset="assets/images/hero-slide-1-800.webp 800w, assets/images/hero-slide-1-1600.webp 1600w" sizes="100vw"><img src="assets/images/hero-slide-1-800.webp" alt="" decoding="async" fetchpriority="high"></picture></div>
+    <div class="hero-slide"><picture><source type="image/avif" srcset="assets/images/hero-slide-2-800.avif 800w, assets/images/hero-slide-2-1600.avif 1600w" sizes="100vw"><source type="image/webp" srcset="assets/images/hero-slide-2-800.webp 800w, assets/images/hero-slide-2-1600.webp 1600w" sizes="100vw"><img src="assets/images/hero-slide-2-800.webp" alt="" decoding="async" fetchpriority="low"></picture></div>
+    <div class="hero-slide"><picture><source type="image/avif" srcset="assets/images/hero-slide-3-800.avif 800w, assets/images/hero-slide-3-1600.avif 1600w" sizes="100vw"><source type="image/webp" srcset="assets/images/hero-slide-3-800.webp 800w, assets/images/hero-slide-3-1600.webp 1600w" sizes="100vw"><img src="assets/images/hero-slide-3-800.webp" alt="" decoding="async" fetchpriority="low"></picture></div>
+    <div class="hero-slide"><picture><source type="image/avif" srcset="assets/images/hero-slide-4-800.avif 800w, assets/images/hero-slide-4-1600.avif 1600w" sizes="100vw"><source type="image/webp" srcset="assets/images/hero-slide-4-800.webp 800w, assets/images/hero-slide-4-1600.webp 1600w" sizes="100vw"><img src="assets/images/hero-slide-4-800.webp" alt="" decoding="async" fetchpriority="low"></picture></div>
+  </div>
   <div class="hero__inner container">
     <p class="iso-badge"><span class="iso-badge__mark" aria-hidden="true">ISO</span>An ISO certified company</p>
     <ul class="hero__keys" aria-label="Product groups">
@@ -257,12 +262,48 @@
       <a class="btn btn--outline-light" href="contact-us.html#enquiry">Talk to our team</a>
     </div>
   </div>
+  <div class="hero-dots" hidden><button type="button" class="hero-dot" aria-label="Show photo 1"></button><button type="button" class="hero-dot" aria-label="Show photo 2"></button><button type="button" class="hero-dot" aria-label="Show photo 3"></button><button type="button" class="hero-dot" aria-label="Show photo 4"></button></div>
 </section>
 
 <section class="metrics" aria-label="Company highlights">
   <div class="metric"><p class="metric__value">100<span>+</span></p><p class="metric__label">Products manufactured</p></div>
   <div class="metric"><p class="metric__value">2009</p><p class="metric__label">Working in agrochemical formulation ingredients since</p></div>
   <div class="metric"><p class="metric__value">2</p><p class="metric__label">Manufacturing units</p></div>
+</section>
+
+<section class="section section--white" aria-labelledby="award-title">
+  <div class="container split">
+    <div class="split__copy" data-reveal>
+      <p class="eyebrow">Recognition</p>
+      <h2 id="award-title">Emerging Company <em>of the Year</em></h2>
+      <p>UBDetsurf Industries Pvt. Ltd. received the Emerging Company of the Year Award &ndash; Small Scale at the PMFAI-SML Annual Agchem Awards in Dubai in 2026. The recognition marks an important milestone in the company&rsquo;s journey.</p>
+      <p><a class="link-arrow" href="about-us.html">Read about UBDetsurf</a></p>
+    </div>
+    <figure class="frame" data-reveal>
+      <picture><source type="image/avif" srcset="assets/images/emerging-company-award-agchem-dubai-2026-600.avif 600w, assets/images/emerging-company-award-agchem-dubai-2026-1200.avif 1200w" sizes="(min-width: 900px) 45vw, 100vw"><source type="image/webp" srcset="assets/images/emerging-company-award-agchem-dubai-2026-600.webp 600w, assets/images/emerging-company-award-agchem-dubai-2026-1200.webp 1200w" sizes="(min-width: 900px) 45vw, 100vw"><img src="assets/images/emerging-company-award-agchem-dubai-2026-600.webp" width="1200" height="800" alt="UBDetsurf Industries representatives receiving the Emerging Company of the Year Award on stage in Dubai" loading="lazy" decoding="async"></picture>
+      <figcaption>PMFAI-SML Annual Agchem Awards, Dubai, 2026.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="section section--dark globe-section" aria-labelledby="reach-title">
+  <div class="container split">
+    <div class="split__copy" data-reveal>
+      <p class="eyebrow">Global reach</p>
+      <h2 id="reach-title">From India to <em>global markets</em></h2>
+      <p class="lead">Headquartered in Noida, UBDetsurf has expanded its footprint across India and is investing in international outreach, digital transformation and talent development as it builds toward wider global recognition.</p>
+      <ul class="checklist">
+        <li>Strong PAN-India market presence</li>
+        <li>International outreach and expansion</li>
+        <li>Long-term global recognition</li>
+        <li>Customer engagement from order to delivery</li>
+      </ul>
+    </div>
+    <figure class="globe" data-reveal="right"><picture><source type="image/avif" srcset="assets/images/crop-rows-aerial-600.avif 600w, assets/images/crop-rows-aerial-1200.avif 1200w" sizes="(min-width: 900px) 45vw, 100vw"><source type="image/webp" srcset="assets/images/crop-rows-aerial-600.webp 600w, assets/images/crop-rows-aerial-1200.webp 1200w" sizes="(min-width: 900px) 45vw, 100vw"><img src="assets/images/crop-rows-aerial-600.webp" width="1200" height="837" alt="Aerial view of rows in a crop field" loading="lazy" decoding="async"></picture><figcaption>
+      <strong>From India to wider markets</strong><br>
+      Building international reach around formulation expertise and customer-focused service.
+    </figcaption></figure>
+  </div>
 </section>
 
 <section class="section section--white" aria-labelledby="range-title">
@@ -309,82 +350,27 @@
   </div>
 </section>
 
-<section class="section section--tint" aria-labelledby="rnd-title">
-  <div class="container split split--wide-copy">
-    <div class="split__copy" data-reveal>
-      <p class="eyebrow">Research &amp; development</p>
-      <h2 id="rnd-title">Formulation support from <em>brief to commercial scale</em></h2>
-      <p class="lead">UBDetsurf&rsquo;s R&amp;D team works with pesticide manufacturers on formulation development, characterisation, performance studies and stability testing, then helps scale optimised formulations into commercial production.</p>
-      <ul class="checklist">
-        <li>Tailored surfactants, emulsifiers, adjuvants, dispersing and wetting agents</li>
-        <li>Help with stability, emulsification and shelf-life problems</li>
-        <li>Pilot scale-up and validation before commercial supply</li>
-      </ul>
-      <p><a class="link-arrow" href="research-development.html">Explore research &amp; development</a></p>
-    </div>
-    <figure class="frame" data-reveal>
-      <picture><source type="image/avif" srcset="assets/images/quality-testing-laboratory-400.avif 400w, assets/images/quality-testing-laboratory-763.avif 763w" sizes="(min-width: 900px) 40vw, 100vw"><source type="image/webp" srcset="assets/images/quality-testing-laboratory-400.webp 400w, assets/images/quality-testing-laboratory-763.webp 763w" sizes="(min-width: 900px) 40vw, 100vw"><img src="assets/images/quality-testing-laboratory-763.webp" width="763" height="506" alt="Gloved hands holding laboratory test tubes during quality testing at UBDetsurf" loading="lazy" decoding="async"></picture>
-      <figcaption>Quality testing in the UBDetsurf laboratory.</figcaption>
-    </figure>
-  </div>
-</section>
-
-<section class="section section--white" aria-labelledby="award-title">
-  <div class="container split">
-    <div class="split__copy" data-reveal>
-      <p class="eyebrow">Recognition</p>
-      <h2 id="award-title">Emerging Company <em>of the Year</em></h2>
-      <p>UBDetsurf Industries Pvt. Ltd. received the Emerging Company of the Year Award &ndash; Small Scale at the PMFAI-SML Annual Agchem Awards in Dubai in 2026. The recognition marks an important milestone in the company&rsquo;s journey.</p>
-      <p><a class="link-arrow" href="about-us.html">Read about UBDetsurf</a></p>
-    </div>
-    <figure class="frame" data-reveal>
-      <picture><source type="image/avif" srcset="assets/images/emerging-company-award-agchem-dubai-2026-600.avif 600w, assets/images/emerging-company-award-agchem-dubai-2026-1200.avif 1200w" sizes="(min-width: 900px) 45vw, 100vw"><source type="image/webp" srcset="assets/images/emerging-company-award-agchem-dubai-2026-600.webp 600w, assets/images/emerging-company-award-agchem-dubai-2026-1200.webp 1200w" sizes="(min-width: 900px) 45vw, 100vw"><img src="assets/images/emerging-company-award-agchem-dubai-2026-600.webp" width="1200" height="800" alt="UBDetsurf Industries representatives receiving the Emerging Company of the Year Award on stage in Dubai" loading="lazy" decoding="async"></picture>
-      <figcaption>PMFAI-SML Annual Agchem Awards, Dubai, 2026.</figcaption>
-    </figure>
-  </div>
-</section>
-
-<section class="section section--dark" aria-labelledby="reach-title">
-  <div class="container split">
-    <div class="split__copy" data-reveal>
-      <p class="eyebrow">Global reach</p>
-      <h2 id="reach-title">From India to <em>global markets</em></h2>
-      <p class="lead">Headquartered in Noida, UBDetsurf has expanded its footprint across India and is investing in international outreach, digital transformation and talent development as it builds toward wider global recognition.</p>
-      <ul class="checklist">
-        <li>Strong PAN-India market presence</li>
-        <li>International outreach and expansion</li>
-        <li>Long-term global recognition</li>
-        <li>Customer engagement from order to delivery</li>
-      </ul>
-    </div>
-    <blockquote class="quote-block" data-reveal>
-      <strong>From India to wider markets</strong><br>
-      Building international reach around formulation expertise and customer-focused service.
-    </blockquote>
-  </div>
-</section>
-
-<section class="section section--white" aria-labelledby="clients-title">
+<section class="section section--tint" aria-labelledby="clients-title">
   <div class="container">
     <div class="section-head" data-reveal>
       <p class="eyebrow">Client &amp; partnership network</p>
       <h2 id="clients-title">Agrochemical companies we <em>supply</em></h2>
       <p class="lead">We supply surfactants and formulation support to leading agrochemical companies across India.</p>
     </div>
-    <ul class="logo-grid">
-      <li><img src="assets/images/clients/bharat-certis-agriscience.webp" width="197" height="38" alt="Bharat Certis AgriScience Ltd. logo" loading="lazy" decoding="async"></li>
-      <li><img src="assets/images/clients/br-agrotech-limited.webp" width="600" height="119" alt="BR Agrotech Limited logo" loading="lazy" decoding="async"></li>
-      <li><img src="assets/images/clients/insecticides-india-limited.webp" width="387" height="130" alt="Insecticides (India) Limited logo" loading="lazy" decoding="async"></li>
-      <li><img src="assets/images/clients/ju-agri-sciences.webp" width="300" height="170" alt="JU Agri Sciences logo" loading="lazy" decoding="async"></li>
-      <li><img src="assets/images/clients/safex-chemicals.webp" width="166" height="89" alt="Safex Chemicals logo" loading="lazy" decoding="async"></li>
-      <li><img src="assets/images/clients/tropical-agro-system.webp" width="140" height="84" alt="Tropical Agro System (India) Pvt. Ltd. logo" loading="lazy" decoding="async"></li>
+    <ul class="client-cards">
+      <li data-reveal><div class="client-card"><img src="assets/images/clients/bharat-certis-agriscience.webp" width="197" height="38" alt="Bharat Certis AgriScience Ltd. logo" loading="lazy" decoding="async"></div></li>
+      <li data-reveal><div class="client-card"><img src="assets/images/clients/br-agrotech-limited.webp" width="600" height="119" alt="BR Agrotech Limited logo" loading="lazy" decoding="async"></div></li>
+      <li data-reveal><div class="client-card"><img src="assets/images/clients/insecticides-india-limited.webp" width="387" height="130" alt="Insecticides (India) Limited logo" loading="lazy" decoding="async"></div></li>
+      <li data-reveal><div class="client-card"><img src="assets/images/clients/ju-agri-sciences.webp" width="300" height="170" alt="JU Agri Sciences logo" loading="lazy" decoding="async"></div></li>
+      <li data-reveal><div class="client-card"><img src="assets/images/clients/safex-chemicals.webp" width="166" height="89" alt="Safex Chemicals logo" loading="lazy" decoding="async"></div></li>
+      <li data-reveal><div class="client-card"><img src="assets/images/clients/tropical-agro-system.webp" width="140" height="84" alt="Tropical Agro System (India) Pvt. Ltd. logo" loading="lazy" decoding="async"></div></li>
     </ul>
     <p class="fine-print">Selected clients and partners across the Indian agrochemical sector.</p>
     <p class="btn-row btn-row--center"><a class="btn btn--outline" href="clients.html">View all clients</a></p>
   </div>
 </section>
 
-<section class="section section--tint" aria-labelledby="faq-title">
+<section class="section section--white" aria-labelledby="faq-title">
   <div class="container--narrow">
     <div class="section-head" data-reveal>
       <p class="eyebrow">Quick answers</p>
@@ -401,7 +387,7 @@
   </div>
 </section>
 
-<section class="cta-band" data-reveal>
+<section class="cta-band cta-band--photo" data-reveal>
   <div class="container">
     <p class="eyebrow">Start a conversation</p>
     <h2>Let&rsquo;s formulate better, <em>together.</em></h2>

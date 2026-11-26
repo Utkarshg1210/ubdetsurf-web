@@ -20,7 +20,7 @@ Everything on the rebuilt site comes from the original Wix pages, the Velo files
 
 ## B. Content that was removed or replaced
 
-- **All Unsplash stock photos** (leaf droplets, lab bench, team, field, crop). They are not UBDetsurf's own and implied facilities and people that may not be yours. Pages use real photos, a CSS pattern or no image.
+- **All Unsplash stock photos** (leaf droplets, lab bench, team, field, crop). They are not UBDetsurf's own and implied facilities and people that may not be yours. Pages use real photos, a CSS pattern or no image. **Exception:** the field-spraying photo was restored beside "Our story" on the About page to match the Wix design. The home page slideshow, "Global markets" and closing-banner stock photos were restored for the same reason; replace them with real company photos when available.
 - **Five hotlinked client logos** (Advance Agrolife, Agrow Allied Ventures, Acufine Lifesciences, Yogi Crop Sciences, Nathsagar Bio Genetics) were loaded from those companies' own websites, which is fragile and may not be permitted. They now appear as **text names**. **Action:** obtain the logos and permission to show them, or keep text.
 - **Client logos in general:** the 22 logos are shown to identify existing customers. Confirm you have permission from each company.
 - **"Request received / sent" messages** from the Wix forms (they claimed an enquiry or application was sent). The new forms only open the visitor's email app and say so.

@@ -16,8 +16,8 @@ This document explains what was built into the site, how to measure it and what 
 | Structured data | JSON-LD: `Organization` (with address, phones, emails, area served (India), knowsAbout and the Dubai award, which should be verified, see `CONTENT_AUDIT.md`), `WebSite`, page type (`AboutPage`, `ContactPage`, `CollectionPage`, `WebPage`), `BreadcrumbList`, `FAQPage` on pages with a visible FAQ, `ItemList` for formulation types. **Deliberately absent:** `Product` (no prices or reviews exist), `Review`/`AggregateRating`, `sameAs` (no verified social profiles), `foundingDate` for the legal entity, `hasCertification` (certificate bodies not modelled). |
 | Images | AVIF + WebP, explicit width and height, descriptive file names and alt text, lazy loading except the home hero (eager, `fetchpriority="high"`, preloaded). |
 | Performance | Self-hosted fonts with `font-display: swap`, preloaded; no frameworks; no third-party scripts; CSS split into four files; no layout shift from fonts (CLS 0 in the Lighthouse run). |
-| AEO | Direct-answer opening paragraphs, FAQ blocks with genuine questions on Home, Products, R&D and Certifications, real HTML tables for the 6 molecule recommendation lists, a fact sheet on the About page. |
-| GEO | Consistent naming ("UBDetsurf Industries Pvt. Ltd."), one fact sheet, factual unambiguous sentences, `llms.txt` with only verified facts. `llms.txt` is a convenience file; no major search or AI provider has committed to using it as a ranking or citation signal, so it is not part of the plan's success measures. |
+| AEO | Direct-answer opening paragraphs, FAQ blocks with genuine questions on Home, Products, R&D and Certifications, real HTML tables for the 6 molecule recommendation lists. (The About page fact sheet was removed in November 2026.) |
+| GEO | Consistent naming ("UBDetsurf Industries Pvt. Ltd."), factual unambiguous sentences, `llms.txt` with only verified facts. `llms.txt` is a convenience file; no major search or AI provider has committed to using it as a ranking or citation signal, so it is not part of the plan's success measures. |
 
 ## Keyword map (one primary theme per page, to avoid cannibalisation)
 
@@ -147,7 +147,7 @@ Track: number of referring domains (Search Console), which are relevant to agroc
 
 **Annually**
 - Full technical audit (crawl, structured data, accessibility, security headers).
-- Review and refresh the company fact sheet and `llms.txt`; renew domain and TLS certificates; check fonts/licences.
+- Review and refresh the company facts across the pages and in `llms.txt`; renew domain and TLS certificates; check fonts/licences.
 - Re-assess the palette, imagery and copy against the brand; replace placeholder-quality photos with new photography.
 - Re-run the AI prompt test with a new set alongside the old one.
 

@@ -4,7 +4,7 @@
 
 This file is a plain-language guide to the public website. It summarises information published on the pages below; the pages themselves are the source of truth.
 
-## Company facts (as published on the website)
+## Company facts (summarised from across the website)
 - Legal name: UBDetsurf Industries Pvt. Ltd. (UBDetsurf Industries Private Limited)
 - Head office: Ithum, Tower-B, 1111A, Plot No. A-40, Sector-62, Noida, Uttar Pradesh - 201301, India
 - Business: emulsifiers, surfactants, wetting and dispersing agents and adjuvants for agrochemical formulations
@@ -16,7 +16,7 @@ This file is a plain-language guide to the public website. It summarises informa
 
 ## Pages
 - [Home](https://www.ubdetsurf.com/): overview, product groups, FAQ
-- [About us](https://www.ubdetsurf.com/about-us.html): company fact sheet, leadership, facilities
+- [About us](https://www.ubdetsurf.com/about-us.html): company story, leadership, journey, vision and mission, facilities
 - [Products](https://www.ubdetsurf.com/products.html): formulation types (EC, EW, SC, SL, WP/WDG, SG) with molecule recommendation tables and notes
 - [Research & development](https://www.ubdetsurf.com/research-development.html): lab capabilities and the development process
 - [Our clients](https://www.ubdetsurf.com/clients.html): agrochemical companies supplied
