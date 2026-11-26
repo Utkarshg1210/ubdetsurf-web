@@ -254,6 +254,16 @@
 .sheet{scroll-margin-top:90px}mark.found{background:#ffe58a;padding:0 2px}
 
 
+/* ---- R&D page ------------------------------------------------------------ */
+.page-hero.page-hero--rnd{background:linear-gradient(rgba(6,26,10,.7),rgba(6,26,10,.78)),url("../assets/images/rnd-banner-1600.webp") center/cover}.page-hero--rnd::after{display:none}
+.band .band__grid{display:grid;gap:1.5rem;align-items:center}@media(min-width:900px){.band .band__grid{grid-template-columns:1fr 1fr;gap:4rem}}
+.band{padding-block:3.5rem}.band h2{margin-top:.75rem}.band .lead{color:var(--on-dark-muted)}
+.numbered{counter-reset:n}.numbered .card::before{counter-increment:n;content:"0" counter(n);display:block;font:700 1.6rem var(--font-serif);color:#c9a84c}
+.labgrid{display:grid;gap:1.25rem;padding:0;list-style:none}@media(min-width:640px){.labgrid{grid-template-columns:repeat(2,1fr)}}@media(min-width:1000px){.labgrid{grid-template-columns:repeat(4,1fr)}}
+.labgrid .card{padding:1.5rem 1.25rem}
+.partners{display:grid;gap:1.5rem;text-align:center}@media(min-width:800px){.partners{grid-template-columns:repeat(3,1fr)}}
+.partners>div{padding:2rem 1.5rem;border:1px solid var(--line);border-bottom:3px solid #c9a84c;border-radius:14px;box-shadow:var(--shadow-1)}.partners p{margin-top:.5rem;color:var(--text-muted)}
+
 /* Every inner page centres its banner, matching the home page header. */
 .page-hero { text-align: center; }
 .page-hero h1, .page-hero__lead { margin-inline: auto; }
