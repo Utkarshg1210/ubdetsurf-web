@@ -91,7 +91,7 @@ Content-Security-Policy: default-src 'self'; img-src 'self' data:; style-src 'se
 
 ## Forms (Contact and Careers)
 
-A static site has no server to receive form data, so the forms **open the visitor's email app** with a pre-filled message (`mailto:`). They never say "sent": opening the email app is not the same as sending. They also show a copy-the-text fallback. With JavaScript disabled, a button with a ready-made `mailto:` link is shown instead.
+A static site has no server to receive form data, so the forms prepare a pre-filled message: they try the visitor's email app (`mailto:`) and also offer Gmail and Outlook web compose buttons, which pass the form details to that service only when clicked. They never say "sent": opening the email app is not the same as sending. They also show a copy-the-text fallback. With JavaScript disabled, a button with a ready-made `mailto:` link is shown instead.
 
 - Careers subject is exactly `Career Application – UBDetsurf Industries`; the page tells applicants to **attach their CV** because a web page cannot attach files.
 - If you want forms that send directly, you need a server or a form service. That adds a third party and data-protection obligations, so it was deliberately not done.

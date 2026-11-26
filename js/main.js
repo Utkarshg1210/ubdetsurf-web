@@ -55,15 +55,27 @@
     box.hidden = false;
   }
 
-  /* Opening a mail app is not the same as sending an e-mail, so the message
-     below never claims the enquiry was sent. */
-  function statusMessage(to, href) {
+  /* Preparing a message is not the same as sending it, so the text below never
+     claims it was sent. A mailto: link does nothing when no mail app or webmail
+     handler is set up, so Gmail and Outlook web compose links are offered too.
+     They pass the form details to that service only when the visitor clicks. */
+  function webmailLink(label, base, params) {
+    var query = Object.keys(params).map(function (key) { return key + "=" + encodeURIComponent(params[key]); }).join("&amp;");
+    return "<a class=\"btn btn--green\" target=\"_blank\" rel=\"noopener noreferrer\" href=\"" + base + query + "\">" + label + "</a>";
+  }
+
+  function statusMessage(to, subject, lines, href) {
+    var body = lines.join("\n");
     return (
-      "<strong>Your email app should now be opening.</strong>" +
-      "Review the message and press Send &mdash; nothing has been sent yet. " +
-      "If nothing opened, use the button below to try again, or copy the text and email it to <a href=\"mailto:" + to + "\">" + to + "</a>." +
-      "<br><a class=\"btn btn--green\" data-mailto href=\"" + href.replace(/&/g, "&amp;") + "\">Open email draft again</a> " +
-      "<button type=\"button\" class=\"btn btn--outline\" data-copy>Copy message text</button>"
+      "<strong>Your message is ready. It has not been sent yet.</strong>" +
+      "Choose how to open it, then press Send. If an email app did not open by itself, use one of these:" +
+      "<span class=\"form-status__actions\">" +
+      webmailLink("Open in Gmail", "https://mail.google.com/mail/?view=cm&amp;fs=1&amp;", { to: to, su: subject, body: body }) +
+      webmailLink("Open in Outlook", "https://outlook.live.com/mail/0/deeplink/compose?", { to: to, subject: subject, body: body }) +
+      "<a class=\"btn btn--outline\" href=\"" + href.replace(/&/g, "&amp;") + "\">Use email app</a>" +
+      "<button type=\"button\" class=\"btn btn--outline\" data-copy>Copy message text</button>" +
+      "</span>" +
+      "You can also copy the text and email it to <a href=\"mailto:" + to + "\">" + to + "</a>."
     );
   }
 
@@ -108,7 +120,7 @@
       ];
       var enquiryHref = buildMailto(SALES_EMAIL, subject, lines);
       window.location.href = enquiryHref;
-      showStatus(enquiry, statusMessage(SALES_EMAIL, enquiryHref));
+      showStatus(enquiry, statusMessage(SALES_EMAIL, subject, lines, enquiryHref));
       wireCopy(enquiry, "To: " + SALES_EMAIL + "\nSubject: " + subject + "\n\n" + lines.join("\n"));
     });
 
@@ -148,7 +160,7 @@
       ];
       var careersHref = buildMailto(CAREERS_EMAIL, subject, lines);
       window.location.href = careersHref;
-      showStatus(careers, statusMessage(CAREERS_EMAIL, careersHref) + "<br><strong>Remember to attach your CV</strong> (PDF or Word) before you press Send.");
+      showStatus(careers, statusMessage(CAREERS_EMAIL, subject, lines, careersHref) + "<br><strong>Remember to attach your CV</strong> (PDF or Word) before you press Send.");
       wireCopy(careers, "To: " + CAREERS_EMAIL + "\nSubject: " + subject + "\n\n" + lines.join("\n"));
     });
   }

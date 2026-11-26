@@ -24,7 +24,6 @@
   .form-grid .field--full { grid-column: 1 / -1; }
   .enquiry-types { grid-template-columns: repeat(2, 1fr); }
   .related { grid-template-columns: repeat(2, 1fr); }
-  .form-actions { grid-template-columns: auto auto; justify-content: start; }
   .strip__inner { flex-direction: row; align-items: center; justify-content: space-between; }
   .site-footer__bottom { flex-direction: row; justify-content: space-between; align-items: center; }
 }

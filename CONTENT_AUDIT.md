@@ -32,8 +32,8 @@ Everything on the rebuilt site comes from the original Wix pages, the Velo files
 | Item | Status |
 |---|---|
 | infosales@ubdetsurf.com | Verified (original site). Used for **both** enquiries and careers. |
-| scm@ubdetsurf.com | Verified (original Contact page). Shown as the supply-chain email only. |
-| 0120-4136200, +91 9999422987, +91 9818009891 | From the original Contact page. |
+| scm@ubdetsurf.com | Removed from the website at the owner's request (November 2026). |
+| 0120-4136200, +91 9999422987 | From the original Contact page. The purchase team number was removed at the owner's request (November 2026). |
 | **HR / careers email** | **None exists.** The original Careers page sent CVs to infosales@. The site does the same. If you have an HR address, change `CAREERS_EMAIL` at the top of `js/main.js` and the static link in `careers.html`. |
 | Social profiles | None on the original site, so none are linked and no `sameAs` is in the schema. |
 | Address | Ithum, Tower-B, 1111A, Plot No. A-40, Sector-62, Noida, Uttar Pradesh – 201301 (original). |
