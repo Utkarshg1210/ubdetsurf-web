@@ -262,13 +262,10 @@ h2 em { color: var(--green-accent); }
   color: var(--green-700);
 }
 .logo__name b { font-weight: 900; }
-.logo__tag {
-  margin-top: 0.15rem;
-  font-family: var(--font-script);
-  font-size: 0.78rem;
-  line-height: 1.3;
-  color: var(--gold-text);
-}
+/* The tagline is artwork cut from the company logo, so its lettering is the
+   same on every device. */
+.logo__tag { display: block; margin-top: 0.2rem; }
+.logo__tag img { width: 100%; max-width: 140px; height: auto; }
 
 .header-cta { display: none; }
 
@@ -375,12 +372,8 @@ h2 em { color: var(--green-accent); }
   color: var(--white);
 }
 .site-footer__name b { font-weight: 900; }
-.site-footer__tag {
-  margin-top: 0.2rem;
-  font-family: var(--font-script);
-  font-size: 1rem;
-  color: var(--gold-300);
-}
+.site-footer__tag { margin-top: 0.4rem; }
+.site-footer__tag img, .site-footer__script img { width: 210px; max-width: 100%; height: auto; }
 .site-footer__about {
   margin-top: var(--space-4);
   max-width: 44ch;
@@ -415,11 +408,6 @@ h2 em { color: var(--green-accent); }
   padding-block: var(--space-5);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   font-size: var(--fs-xs);
-}
-.site-footer__script {
-  font-family: var(--font-script);
-  font-size: 1rem;
-  color: #8a928c;
 }
 
 /* ---- Motion preferences ---- */

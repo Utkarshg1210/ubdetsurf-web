@@ -7,7 +7,7 @@
 @media (min-width: 640px) {
   .logo__mark { width: 56px; height: 56px; }
   .logo__name { font-size: 1.15rem; }
-  .logo__tag { font-size: 0.9rem; }
+  .logo__tag img { max-width: 190px; }
 
   .metrics { grid-template-columns: repeat(3, 1fr); }
   .metric { border-bottom: 0; border-right: 1px solid rgba(255, 255, 255, 0.1); }
@@ -38,7 +38,7 @@
   .site-header__brand { min-height: var(--brand-row-h); }
   .logo__mark { width: 68px; height: 68px; }
   .logo__name { font-size: clamp(1.3rem, 1.9vw, 1.7rem); }
-  .logo__tag { font-size: 1rem; }
+  .logo__tag img { max-width: 250px; }
   .header-cta { display: inline-flex; }
   .nav-toggle { display: none; }
   .site-nav { display: block; }
@@ -118,6 +118,11 @@
   .client-card img { height: 96px; }
   .client-cards li:nth-child(3n+2) { --reveal-delay: 0.15s; }
   .client-cards li:nth-child(3n) { --reveal-delay: 0.3s; }
+}
+
+/* ---- Very narrow phones: give the name and tagline room (Contact Us stays in the menu) ---- */
+@media (max-width: 379px) {
+  .site-header .header-cta { display: none; }
 }
 
 @media print {
