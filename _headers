@@ -1,0 +1,11 @@
+# How long browsers may reuse files before checking again (Netlify).
+# A replaced photo or font needs a new file name, or returning visitors see the old one for up to a week.
+# Pages (.html) keep Netlify's default, so text changes show at once.
+/assets/*
+  Cache-Control: public, max-age=604800
+/favicon.ico
+  Cache-Control: public, max-age=604800
+/css/*
+  Cache-Control: public, max-age=600
+/js/*
+  Cache-Control: public, max-age=600

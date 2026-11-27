@@ -266,17 +266,48 @@ q.addEventListener('input',function(){out.textContent='';var words=q.value.trim(
     var dotBar = hero.querySelector(".hero-dots");
     var dots = dotBar.querySelectorAll(".hero-dot");
     var current = 0, timer = null, autoPlay = !reduce;
+    /* Photos 2-4 are fetched only shortly before they are shown. */
+    var loadSlide = function (n) {
+      slides[n].querySelectorAll("[data-srcset]").forEach(function (el) {
+        el.setAttribute("srcset", el.getAttribute("data-srcset"));
+        el.removeAttribute("data-srcset");
+      });
+      var img = slides[n].querySelector("img");
+      if (img.hasAttribute("data-src")) {
+        img.setAttribute("src", img.getAttribute("data-src"));
+        img.removeAttribute("data-src");
+      }
+      return img;
+    };
+    var isReady = function (img) { return img.complete && img.naturalWidth > 0; };
+    var wanted = 0, preload = null;
     var showSlide = function (n) {
       current = n;
       slides.forEach(function (el, i) { el.classList.toggle("is-active", i === n); });
       dots.forEach(function (el, i) { el.setAttribute("aria-current", String(i === n)); });
     };
+    /* Change photo only once it has arrived, so the header never goes blank. */
+    var goTo = function (n) {
+      wanted = n;
+      var img = loadSlide(n);
+      if (isReady(img)) showSlide(n);
+      else img.addEventListener("load", function () { if (wanted === n) showSlide(n); }, { once: true });
+    };
     var run = function (on) {
       clearInterval(timer);
-      if (on && autoPlay) timer = setInterval(function () { showSlide((current + 1) % slides.length); }, 5000);
+      clearTimeout(preload);
+      if (!on || !autoPlay) return;
+      var fetchNext = function () { loadSlide((current + 1) % slides.length); };
+      preload = setTimeout(fetchNext, 2000);
+      timer = setInterval(function () {
+        var next = (current + 1) % slides.length;
+        if (!isReady(loadSlide(next))) return; // still downloading: wait for the next turn
+        showSlide(next);
+        preload = setTimeout(fetchNext, 2000);
+      }, 5000);
     };
     dots.forEach(function (el, i) {
-      el.addEventListener("click", function () { autoPlay = false; run(false); showSlide(i); });
+      el.addEventListener("click", function () { autoPlay = false; run(false); goTo(i); });
     });
     hero.addEventListener("mouseenter", function () { run(false); });
     hero.addEventListener("mouseleave", function () { run(true); });

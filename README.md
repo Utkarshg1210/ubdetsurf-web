@@ -54,16 +54,11 @@ Referrer-Policy: strict-origin-when-cross-origin
 Permissions-Policy: camera=(), microphone=(), geolocation=()
 Content-Security-Policy: default-src 'self'; img-src 'self' data:; style-src 'self'; style-src-attr 'unsafe-inline'; script-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'
 
-# Caching
-/assets/*   Cache-Control: public, max-age=31536000, immutable
-/css/*      Cache-Control: public, max-age=604800, stale-while-revalidate=86400
-/js/*       Cache-Control: public, max-age=604800, stale-while-revalidate=86400
-/*.html     Cache-Control: no-cache
-/           Cache-Control: no-cache
+# Caching: set for Netlify in the _headers file (photos and fonts one week; CSS and JS ten minutes)
 ```
 
 - The CSP expects **no inline scripts** (the JSON-LD blocks are data, not executable script). Some cards use inline `style` attributes to time their animation, which `style-src-attr 'unsafe-inline'` allows. Test it on the live site; if you add analytics or embeds, add their domains.
-- Because `/css/` and `/js/` are cached for a week and have no version in the file name, either add `?v=2` to the `<link>`/`<script>` URLs when you change them or lower their `max-age`.
+- File names carry no version, so give a replaced photo or font a **new file name**; otherwise returning visitors can see the old one for up to a week. CSS and JavaScript changes reach them within ten minutes.
 - Turn on **Brotli or gzip** compression for HTML, CSS, JS, SVG and XML.
 - Serve `.woff2` with `Content-Type: font/woff2` and `.avif`/`.webp` with the right image types (most hosts do this already).
 

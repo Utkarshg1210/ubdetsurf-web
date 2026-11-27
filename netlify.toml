@@ -1,6 +1,6 @@
 # Publish only the website files. The internal .md notes stay out of the public site.
 [build]
-  command = "rm -rf dist && mkdir dist && cp -R *.html favicon.ico robots.txt sitemap.xml llms.txt _redirects css js assets dist/"
+  command = "rm -rf dist && mkdir dist && cp -R *.html favicon.ico robots.txt sitemap.xml llms.txt _redirects _headers css js assets dist/"
   publish = "dist"
 
 # Keep links as written (about-us.html), matching the canonical addresses and sitemap.
